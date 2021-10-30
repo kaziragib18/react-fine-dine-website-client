@@ -1,6 +1,4 @@
-import React from 'react';
-import { useEffect } from 'react';
-import { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 const ShowOrder = () => {
       const [orders, setOrders] = useState([]);
@@ -11,7 +9,7 @@ const ShowOrder = () => {
                   .then(data => setOrders(data))
       }, []);
       const handleDelete = id => {
-            const url = `http://localhost:5000/services/${id}`;
+            const url = `http://localhost:5000/orders/${id}`;
             fetch(url, {
                   method: 'DELETE'
             })
@@ -29,7 +27,6 @@ const ShowOrder = () => {
                   })
       }
 
-
       return (
             <div className="d-flex justify-content-center flex-column justify-content-center ">
                   <h2 className="text-info p-3">Your Orders:</h2>
@@ -41,6 +38,7 @@ const ShowOrder = () => {
                               <h3>Phone Number: {order.phone}</h3>
                               <h3>Date of order: {order.date}</h3>
                               <h3>Address: {order.address}</h3>
+                              {/* cancel order */}
                               <button onClick={() =>handleDelete(order._id)} className="btn btn-danger">Cancel</button>
                         </div>)
                   }
