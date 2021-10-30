@@ -7,8 +7,7 @@ import { useParams } from 'react-router';
 const Order = () => {
       const { id } = useParams();
       const [service, setService] = useState([]);
-
-      console.log(id);
+      // console.log(id);
 
       useEffect(() => {
             fetch(`http://localhost:5000/services/${id}`)

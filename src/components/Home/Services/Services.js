@@ -1,15 +1,25 @@
 import React, { useEffect, useState } from 'react';
+import { Spinner } from 'react-bootstrap';
 import Service from '../Service/Service';
 import './Services.css'
 
 const Services = () => {
       const [services, setServices] = useState([]);
+      const [isLoading, setIsLoading] = useState(true);
 
       useEffect(() => {
             fetch('http://localhost:5000/services')
                   .then(res => res.json())
-                  .then(data => setServices(data));
+                  .then(data => {
+                        setServices(data);
+                        setIsLoading(false);
+                  });
       }, [])
+
+      // if (!services) {
+      //       //      setIsLoading(true);
+      //       <Spinner animation="border" />
+      // }
 
       return (
             <div id="services" className="p-3">
@@ -19,7 +29,7 @@ const Services = () => {
                   <div className="service__div">
                         <div className="service__container">
                               {
-                                    services.map(service => <Service
+                                   isLoading? <div style={{justifyContent:'center', alignItems:'center'}} > <Spinner animation="border" variant="primary" /> </div>: services.map(service => <Service
                                           key={service.id}
                                           service={service}>
 

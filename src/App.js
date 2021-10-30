@@ -36,7 +36,7 @@ function App() {
               <MyOrder></MyOrder>
             </PrivateRoute>
 
-            <PrivateRoute path="/addOrder">
+            <PrivateRoute path="/addOrder/:id">
               <AddOrder></AddOrder>
             </PrivateRoute>
 

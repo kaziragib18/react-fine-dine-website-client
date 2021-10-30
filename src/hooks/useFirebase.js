@@ -1,7 +1,7 @@
 import { getAuth, signInWithPopup, GoogleAuthProvider, createUserWithEmailAndPassword, signInWithEmailAndPassword, sendEmailVerification, sendPasswordResetEmail, updateProfile, FacebookAuthProvider, signOut, onAuthStateChanged } from "firebase/auth";
 import { useEffect } from "react";
 import { useState } from "react";
-// import { useHistory, useLocation } from "react-router";
+// import { useHistory, useLocation } from "react-router-dom";
 import initializeAuthentication from "../components/Login/Firebase/firebase.init";
 
 initializeAuthentication();
@@ -13,7 +13,9 @@ const useFirebase = () => {
       // const history = useHistory();
       // const location = useLocation();
       // const url = location.state?.from||"/home"
-     
+
+      // const { from } = location.state || { from: { pathname: "/" } };
+
 
       const auth = getAuth();
 
@@ -44,8 +46,18 @@ const useFirebase = () => {
       const handleResetPassword = () => {
             sendPasswordResetEmail(auth, email)
                   .then(result => {
-
+                        setError('');
                   })
+                  .catch(error => {
+                        setError(error.message);
+
+                        setTimeout(()=>{
+                              setError('');
+                            },5000);
+                   
+                  })
+
+            window.confirm('Reset passward email has been sent');
       }
 
       const handleRegistration = e => {
@@ -90,11 +102,11 @@ const useFirebase = () => {
                   .finally(() => setIsLoading(false));
       }
 
-      const setUserName = () =>{
-            updateProfile(auth.currentUser, {displayName: name})
-            .then(result => {
-      
-            })
+      const setUserName = () => {
+            updateProfile(auth.currentUser, { displayName: name })
+                  .then(result => {
+
+                  })
       }
 
       const verifyEmail = () => {
@@ -112,8 +124,8 @@ const useFirebase = () => {
             signInWithPopup(auth, googleProvider)
                   .then(result => {
                         setUser(result.user);
-                        // history.push(url);
-                      
+                        // history.replace(from);
+
                   })
                   .finally(() => setIsLoading(false));
       }
