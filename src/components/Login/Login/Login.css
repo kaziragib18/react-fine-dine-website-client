@@ -1,0 +1,7 @@
+.text-primary {
+      cursor: pointer;
+    }
+.login__icon{
+  width: 60px;
+  border-radius: 5px;
+}

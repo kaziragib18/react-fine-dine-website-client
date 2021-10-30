@@ -1,0 +1,29 @@
+.banner {
+      height: 100vh;
+      width: 100%;
+      background-image: url("https://www.bhandaryskitchen.com/wp-content/uploads/revslider/home-1/slide1-1.jpg"),
+        linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.3));
+      /* height:600px;
+       width: 100%; */
+      /* border: 1px solid red; */
+      background-blend-mode: overlay;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+    }
+    body {
+      overflow-x: hidden;
+    }
+    
+    .title {
+      color: rgb(247, 222, 222);
+      font-size: 48px;
+      font-weight: 900;
+    }
+    .title-sm {
+      font-weight: 600;
+      font-size: 22px;
+      color: rgb(224, 221, 219);
+
+    }

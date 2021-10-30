@@ -1,0 +1,9 @@
+.btn:hover{
+      background-color: rgb(197, 23, 23);
+      transform: scale(1.1);
+      transition: 1s;
+}
+.service__card{
+      box-shadow: 5px 10px #313030;
+}
+
