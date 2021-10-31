@@ -49,9 +49,9 @@ const Footer = () => {
 
                                                 <span className="m-2 "><img className="footer__icon" src="https://www.svgrepo.com/show/303147/whatsapp-icon-logo.svg" alt="" /></span>
                                           </p>
-                                          <small className="mt-5">Address: Bashundhora R/A, Block A, Road 3, Henis more street, Dhaka</small>
+                                          <small className="mt-5">Address: New work, 4th Block, Road 3, Elizabeth street, USA</small>
                                           <hr />
-                                          <small className="mt-3">Phone: +8801949434546</small>
+                                          <small className="mt-3">Phone: +8807849434512</small>
                                           <br />
                                           <small className="mt-3">Mail: support.FineDine.com</small>
                                     </div>

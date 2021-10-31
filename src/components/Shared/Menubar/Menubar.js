@@ -17,10 +17,7 @@ const Menubar = () => {
                                     <Nav.Link className="nav__design" as={HashLink} to="/home#home">Home</Nav.Link>
                                     <Nav.Link className="nav__design" as={HashLink} to="/home#services">Services</Nav.Link>
                                     <Nav.Link className="nav__design" as={HashLink} to="/home#ourteam">Our Team</Nav.Link>
-                                    {/* <Nav.Link className="nav__design" as={HashLink} to="/home#about">About</Nav.Link> */}
-
                                     <Nav.Link className="nav__design" as={Link} to="/myOrder">My Order</Nav.Link>
-                                    {/* <Nav.Link className="nav__design" as={Link} to="/about">About</Nav.Link> */}
 
                                     {user.displayName ?
                                           <Navbar.Text>
