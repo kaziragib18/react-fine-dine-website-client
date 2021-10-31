@@ -8,7 +8,7 @@ const Services = () => {
       const [isLoading, setIsLoading] = useState(true);
 
       useEffect(() => {
-            fetch('http://localhost:5000/services')
+            fetch('https://ghoulish-dracula-04901.herokuapp.com/services')
                   .then(res => res.json())
                   .then(data => {
                         setServices(data);

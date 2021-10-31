@@ -10,7 +10,7 @@ const Order = () => {
       // console.log(id);
 
       useEffect(() => {
-            fetch(`http://localhost:5000/services/${id}`)
+            fetch(`https://ghoulish-dracula-04901.herokuapp.com/services/${id}`)
                   .then(res => res.json())
                   .then(data => setService(data))
 

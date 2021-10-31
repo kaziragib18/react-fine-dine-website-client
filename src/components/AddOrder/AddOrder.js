@@ -15,7 +15,7 @@ const AddOrder = () => {
       const [service, setService] = useState([]);
 
       useEffect(() => {
-            fetch(`http://localhost:5000/services/${id}`)
+            fetch(`https://ghoulish-dracula-04901.herokuapp.com/services/${id}`)
                   .then(res => res.json())
                   .then(data => setService(data))
 
@@ -25,7 +25,7 @@ const AddOrder = () => {
       let history = useHistory();
       const onSubmit = data => {
             console.log(data);
-            axios.post('http://localhost:5000/orders', data)
+            axios.post('https://ghoulish-dracula-04901.herokuapp.com/orders', data)
             .then(res => {
                   console.log(res);
                   if(res.data.insertedId){

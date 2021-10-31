@@ -4,12 +4,12 @@ const ShowOrder = () => {
       const [orders, setOrders] = useState([]);
 
       useEffect(() => {
-            fetch('http://localhost:5000/orders')
+            fetch('https://ghoulish-dracula-04901.herokuapp.com/orders')
                   .then(res => res.json())
                   .then(data => setOrders(data))
       }, []);
       const handleDelete = id => {
-            const url = `http://localhost:5000/orders/${id}`;
+            const url = `https://ghoulish-dracula-04901.herokuapp.com/orders/${id}`;
             fetch(url, {
                   method: 'DELETE'
             })
